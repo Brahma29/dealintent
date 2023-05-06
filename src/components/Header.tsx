@@ -14,6 +14,15 @@ import Link from 'next/link';
 const Header: React.FC<{}> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const menuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  };
+
   return (
     <div className="header__wrapper">
       <Link href="/" className="header__logo">
@@ -53,7 +62,7 @@ const Header: React.FC<{}> = () => {
           </div>
         </li>
       </ul>
-      <div className="menu__icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="menu__icon" onClick={menuToggle}>
         <div className={`menu__hamburger__bar ${isMenuOpen && 'open'}`}></div>
       </div>
     </div>
