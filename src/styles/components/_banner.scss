@@ -1,0 +1,98 @@
+.banner {
+    width: 100%;
+    padding: 1rem 0;
+
+    &__heading {
+        color: $primary-heading-color;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width : $mobile) {
+            & {
+                font-size: 0.55rem;
+            }
+        }
+
+        button {
+            background-color: $primary-color;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+
+            @media (max-width : $mobile) {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+
+.image__container {
+    position: relative;
+    height: auto;
+
+    &__heading {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        background-size: cover !important;
+        top: 0;
+        height: 100%;
+        width: 45%;
+        font-weight: 900;
+        font-size: calc(0.5rem + 1vw);
+        background: url('../assets/images/banner_heading_rectangle.svg');
+
+        @media (max-width : $mobile) {
+            & {
+                font-size: 0.7rem;
+                width: 70%;
+                padding-left: 3rem;
+            }
+        }
+    }
+}
+
+.image__container>img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @media (max-width : $mobile) {
+        & {
+            height: 7rem;
+        }
+    }
+}
+
+.salesforce_we_logo_container {
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @media (max-width : $mobile) {
+        & {
+            left: 10px;
+            padding: 0.8rem 1rem;
+            bottom: -30px;
+        }
+
+        &>img {
+            width: 2rem;
+            height: auto;
+        }
+    }
+}

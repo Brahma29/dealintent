@@ -1,0 +1,172 @@
+.basic__info__panel {
+    padding: 1.5rem 0;
+    display: flex;
+    gap: 1.8rem;
+    align-items: start;
+}
+
+.side__menu {
+    padding: 1.2rem 1.3rem;
+    background: #fff;
+    border-radius: 10px;
+
+    &__item {
+        font-size: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid #E9EBEB;
+        color: #7B8786;
+        white-space: nowrap;
+
+        &:first-child {
+            font-size: 1.3rem;
+            color: $tabs-links-color;
+            font-weight: 600;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+
+    @media (max-width : $tablet) {
+        display: none;
+    }
+}
+
+
+.panel__screen {
+    flex-grow: 1;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4rem;
+        margin-bottom: 1.4rem;
+
+        .action__buttons {
+            display: flex;
+            align-items: center;
+            border: 1px solid #E9EBEB;
+            border-radius: 5px;
+
+            &__icon {
+                padding: 0.3rem 0.6rem;
+                display: flex;
+                align-items: center;
+
+                &>img {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    object-fit: contain;
+                }
+
+                &:nth-child(2) {
+                    border-left: 1px solid #E9EBEB;
+                    border-right: 1px solid #E9EBEB;
+                }
+            }
+        }
+    }
+}
+
+.panel__screen__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.panel__screen__content>img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.panel__screen__icons {
+    display: flex;
+    padding: 0.6rem 0;
+    align-items: center;
+}
+
+.panel__screen__icon {
+    padding: 0.2rem 0.8rem;
+
+    &:first-child {
+        border-right: 2px solid #E9EBEB;
+    }
+}
+
+.panel__screen_label {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    width: 25rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    &>p {
+        font-weight: 600;
+    }
+
+    @media (max-width : $mobile) {
+        & {
+            width: 80%;
+            left: 10%;
+        }
+
+        &>img {
+            width: 80%;
+            height: auto;
+        }
+
+        &>p {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+.panel__toolbar {
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(211, 215, 215, 0.7);
+    padding: 0.4rem 0 0.4rem 1.4rem;
+    border-radius: 5px;
+    top: 1rem;
+    left: 35%;
+
+    &__icon {
+        padding: 0.3rem 1rem;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid rgba(211, 215, 215, 1);
+
+        &:last-child {
+            border: none;
+        }
+
+        cursor: pointer;
+    }
+
+    @media (max-width : $mobile) {
+        left: 8%;
+    }
+}
+
+.pdf__page__count {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    padding-right: 0.6rem;
+    border-right: 1px solid rgba(211, 215, 215, 1);
+}

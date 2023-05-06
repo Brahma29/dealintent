@@ -1,0 +1,33 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './abstracts/fonts';
+
+//Components SCSS Files
+@import './components/header';
+@import './components/banner';
+@import './components/tabsContainer';
+@import './components/basicInfoTab';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $primary-background-color;
+}
+
+main {
+    padding: 0 1.6rem;
+    font-family: 'Proxima Nova', sans-serif;
+    font-family: 400;
+    min-height: 100vh;
+    max-width: 1560px;
+    margin: auto;
+
+
+    @media (max-width : $mobile) {
+        padding: 0 0.8rem;
+    }
+}

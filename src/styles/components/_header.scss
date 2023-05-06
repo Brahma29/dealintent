@@ -1,0 +1,144 @@
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    position: relative;
+    border-bottom: 1px solid #E9EBEB;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav__menu {
+    @include responsive-menu-items;
+    display: flex;
+    list-style: none;
+    gap: 1.6rem;
+    align-items: center;
+
+    @media (max-width : $mobile) {
+        & {
+            background: $primary-background-color;
+            position: fixed;
+            flex-flow: column;
+            align-items: start;
+            padding: 5rem 4rem;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            gap: 0.6rem;
+            z-index: 2;
+            transform: translateX(-100%);
+
+            &.open {
+                @include transition-ease;
+                transform: translateX(0);
+            }
+
+        }
+    }
+
+
+    .user__name {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .user__position {
+        font-size: 0.8rem;
+    }
+}
+
+
+.menu__icon {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 20px;
+    right: 0.2rem;
+    top: 1.8rem;
+
+    @media (min-width : $mobile) {
+        display: none;
+    }
+
+
+
+}
+
+.menu__hamburger__bar {
+    width: 100%;
+    position: absolute;
+    height: 3px;
+    background: #657372;
+
+    &::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: -8px;
+        height: 3px;
+        background: #657372;
+    }
+
+    &::after {
+        content: '';
+        width: 90%;
+        position: absolute;
+        top: 8px;
+        height: 3px;
+        background: #657372;
+    }
+
+    &.open {
+        @include transition-ease;
+        transform: rotate(360deg);
+        background: transparent;
+
+        &::before {
+            transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+            width: 28px;
+            transform: rotate(-45deg) translate(3px, -7px);
+        }
+    }
+}
+
+.menu__item {
+    font-size: 1rem;
+    text-align: center;
+
+    &__icon {
+        width: 1.6rem;
+
+        @media (max-width : $mobile) {
+            width: 2rem;
+        }
+    }
+
+    @media (max-width : $mobile) {
+        & {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            border-bottom: 1px solid #E9EBEB;
+            padding: 0.6rem 0;
+            width: 100%;
+        }
+
+        &:last-child {
+            order: -1;
+            text-align: left;
+        }
+    }
+
+
+}

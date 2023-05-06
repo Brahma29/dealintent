@@ -1,0 +1,19 @@
+@mixin responsive-menu-items {
+
+    .menu__item__title,
+    .user__details {
+        display: block;
+    }
+
+    @media (min-width: $mobile) {
+
+        .menu__item__title,
+        .user__details {
+            display: none;
+        }
+    }
+}
+
+@mixin transition-ease {
+    transition: all ease 0.4s;
+}
